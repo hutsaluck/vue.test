@@ -11,6 +11,11 @@
     <button @click="count = count + 1">Click + 1</button>
     <p>{{ count }}</p>
   </div>
+
+  <div class="container">
+    <input type="text" v-model="text">
+    <p>{{ text }}</p>
+  </div>
 </template>
 
 
@@ -24,10 +29,12 @@ export default defineComponent({
     const name = 'Yuriy'
     const flag = ref(true)
     const count = ref(0)
+    const text = ref('')
     return {
       name,
       flag,
-      count
+      count,
+      text
     }
   }
 })
