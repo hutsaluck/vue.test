@@ -1,8 +1,10 @@
 <script>
 import {defineComponent, ref} from "vue";
+import Card from "@/components/Card.vue";
 
 export default defineComponent({
   name: 'Cards',
+  components: {Card},
   setup() {
     const arrayCard = [
       {name: "user3", age: 12, src: 'https://picsum.photos/200/300?random=1', alt: 'kitten'},
@@ -24,14 +26,7 @@ export default defineComponent({
 
 <template>
 
-  <div class="cards">
-    <ul v-for="card in arrayCard" :key="card.name">
-      <li>
-        <img :src="card.src" :alt="card.alt">
-        {{ card.name }} — {{ card.age }}
-      </li>
-    </ul>
-  </div>
+  <Card :array-card="arrayCard"/>
 
 </template>
 
