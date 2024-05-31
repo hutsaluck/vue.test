@@ -1,10 +1,16 @@
 <template>
   <h2>Hello, {{ name }}</h2>
-  <br><br><br>
-  <button @click="flag = !flag">Click!</button>
-  <br>
-  <h2 v-if="flag">Hello</h2>
-  <h2 v-else>Bye bye</h2>
+
+  <div class="container">
+    <button @click="flag = !flag">Click!</button>
+    <h2 v-if="flag">Hello</h2>
+    <h2 v-else>Bye bye</h2>
+  </div>
+
+  <div class="container">
+    <button @click="count = count + 1">Click + 1</button>
+    <p>{{ count }}</p>
+  </div>
 </template>
 
 
@@ -17,9 +23,11 @@ export default defineComponent({
   setup() {
     const name = 'Yuriy'
     const flag = ref(true)
+    const count = ref(0)
     return {
       name,
-      flag
+      flag,
+      count
     }
   }
 })
