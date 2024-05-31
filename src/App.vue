@@ -16,15 +16,18 @@
     <input type="text" v-model="text">
     <p>{{ text }}</p>
   </div>
+
+  <Cards />
 </template>
 
 
 <script>
 import {defineComponent, ref} from "vue";
+import Cards from "@/components/Cards.vue";
 
 export default defineComponent({
   name: 'App',
-  components: {},
+  components: {Cards},
   setup() {
     const name = 'Yuriy'
     const flag = ref(true)
